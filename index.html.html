@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>وب‌سایت شخصی</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans',Tahoma,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071126 0%, #08142a 100%);color:#e6eef6;line-height:1.6}
+    .container{max-width:1000px;margin:32px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    .hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:14px;margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{margin:0 0 6px 0;font-size:24px}
+    p.lead{color:var(--muted);margin:0 0 12px 0}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#042028;text-decoration:none;font-weight:600}
+    form input,form textarea{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    footer{text-align:center;color:var(--muted);margin-top:22px;font-size:13px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.brand .hide-md{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">وب</div>
+        <div>
+          <div style="font-weight:700">حسن مسافری ضیاءالدین</div>
+          <div class="hide-md" style="color:var(--muted);font-size:13px">دکترای تخصصی آبیاری و زهکشی | کارشناس رسمی دادگستری رشته آب</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">درباره</a>
+        <a href="#projects">نمونه‌کار</a>
+        <a href="#contact">تماس</a>
+      </nav>
+    </header>
+
+    <section class="hero card" role="region" aria-label="مقدمه">
+      <div class="grid">
+        <div>
+          <h1>سلام — من یک وب‌سایت ساده آماده کردم</h1>
+          <p class="lead">دکترای تخصصی آبیاری و زهکشی از دانشگاه فردوسی مشهد، دارای ۱۲ سال سابقه کار در سازمان جهاد کشاورزی خراسان رضوی و کارشناس رسمی دادگستری رشته آب هستم.</p>
+          <a class="btn" href="#contact">درخواست تغییر</a>
+        </div>
+        <aside class="card" style="background:var(--glass);align-self:start">
+          <strong>مهارت‌ها</strong>
+          <ul style="padding-left:12px;margin-top:8px;color:var(--muted)">
+            <li>آبیاری و زهکشی</li>
+            <li>مدیریت پروژه‌های کشاورزی</li>
+            <li>نرم‌افزارهای تخصصی: SIRMOD، AquaCrop</li>
+            <li>مهارت کامل در نرم‌افزارهای Office</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="card" style="margin-top:16px">
+      <h2>درباره من</h2>
+      <p class="lead">اینجا یک پاراگراف برای معرفی کوتاه شماست. می‌توانید سابقه، هدف یا خدمات خود را بنویسید.</p>
+    </section>
+
+    <section id="projects" class="card" style="margin-top:16px">
+      <h2>نمونه‌کارها</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px">
+        <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">پروژه ۱</div>
+        <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">پروژه ۲</div>
+        <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">پروژه ۳</div>
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:16px">
+      <h2>تماس</h2>
+      <p class="lead">فرم زیر فقط نمونه است — برای ارسال واقعی باید سرور یا سرویس فرم تنظیم کنید.</p>
+      <form onsubmit="handleSubmit(event)">
+        <label>نام</label>
+        <input type="text" id="name" placeholder="نام شما" required />
+        <label>ایمیل</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+        <label>پیام</label>
+        <textarea id="message" rows="4" placeholder="پیام شما..."></textarea>
+        <div style="margin-top:10px"><button class="btn" type="submit">ارسال</button></div>
+      </form>
+      <p style="margin-top:10px;font-weight:600">شماره تماس: 09153126994</p>
+      <div id="notice" style="margin-top:12px;color:var(--muted)"></div>
+    </section>
+
+    <section id="resume" class="card" style="margin-top:16px">
+      <h2>رزومه</h2>
+      <p class="lead">برای دانلود نسخه PDF رزومه من، روی دکمه زیر کلیک کنید.</p>
+      <a class="btn" href="رزومه.pdf" download>دانلود رزومه PDF</a>
+    </section>
+
+    <footer>
+      ساخته‌شده با ❤️ — نسخه ساده. بازنگری یا افزودن ویژگی؟ به من بگو.
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const notice=document.getElementById('notice');
+      notice.textContent=`متشکرم، ${name || 'دوست'}! پیام شما ثبت شد (نمونه).`;
+    }
+  </script>
+</body>
+</html>
